@@ -1,0 +1,20 @@
+/* LYZN — fonts only (constellation bg is rendered via Canvas) */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+.App {
+  font-family: 'Sora', sans-serif;
+  color: #fff;
+  background-color: #000;
+}
+
+.font-sora { font-family: 'Sora', sans-serif; }
+.font-jetbrains { font-family: 'JetBrains Mono', monospace; }
+
+/* selection */
+::selection { background: #fff; color: #000; }
+
+/* scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: #1a1a1a; }
+::-webkit-scrollbar-thumb:hover { background: #2a2a2a; }
