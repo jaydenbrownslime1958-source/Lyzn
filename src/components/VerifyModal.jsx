@@ -196,25 +196,18 @@ export const VerifyModal = ({ open, onOpenChange, method }) => {
                   </p>
                   <p className="font-unbounded text-3xl mt-2">Lifetime Access Unlocked</p>
                 </div>
-                <div
-                  className="bg-black/50 border border-cyan-400/40 p-5 text-center cursor-pointer group"
-                  onClick={copyKey}
-                  data-testid="generated-key"
-                >
-                  <p className="text-[10px] uppercase tracking-[0.3em] text-cyan-400 mb-2">
-                    Your Key (click to copy)
-                  </p>
-                  <p className="font-mono text-xl md:text-2xl text-white tracking-widest break-all">
-                    {submission.key}
-                  </p>
-                  <div className="flex items-center justify-center gap-2 mt-3 text-xs text-purple-200/70">
-                    {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
-                    {copied ? "Copied" : "Copy key"}
+                <div className="bg-black/50 border border-emerald-400/40 p-6 text-center" data-testid="key-sent-message">
+                  <div className="flex items-center justify-center gap-2 text-emerald-400 text-sm font-bold uppercase tracking-[0.25em]">
+                    <Check className="w-4 h-4" />
+                    Key sent to your email
                   </div>
+                  <p className="text-white text-base mt-3 font-mono break-all">
+                    {submission.email}
+                  </p>
+                  <p className="text-purple-200/60 text-xs mt-3">
+                    Check your inbox (and spam folder just in case).
+                  </p>
                 </div>
-                <p className="text-sm text-purple-200/80 text-center">
-                  A copy was sent to <span className="text-white">{submission.email}</span>.
-                </p>
                 <a
                   href="https://discord.gg/m7Cju8zr3Z"
                   target="_blank"
