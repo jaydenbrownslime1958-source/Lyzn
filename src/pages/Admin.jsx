@@ -47,6 +47,7 @@ export default function Admin() {
       const t = setInterval(() => fetchList(), 5000);
       return () => clearInterval(t);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [authed]);
 
   // Auto-login if pw stored
