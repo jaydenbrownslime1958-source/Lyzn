@@ -113,15 +113,22 @@ export const VerifyModal = ({ open, onOpenChange, method }) => {
       });
     } catch (err) {
       const detail = err?.response?.data?.detail || "Submission failed.";
-      if (err?.response?.status === 429) {
+      const status = err?.response?.status;
+      // 429 = rate-limit/flagged, 409 = already-approved or out-of-stock
+      if (status === 429 && /seconds/i.test(detail)) {
         const match = detail.match(/(\d+)\s*seconds?/i);
         const secs = match ? parseInt(match[1], 10) : 300;
         setCooldownEnd(Date.now() + secs * 1000);
         toast.error(detail, {
+          duration: 6000,
           style: { background: "#0a0020", border: "1px solid #FF003C", color: "#fff" },
         });
       } else {
-        toast.error(detail);
+        // generic error – surface the backend's reason directly so the user knows what to fix
+        toast.error(detail, {
+          duration: 6000,
+          style: { background: "#0a0020", border: "1px solid #FF003C", color: "#fff" },
+        });
       }
     } finally {
       setLoading(false);
