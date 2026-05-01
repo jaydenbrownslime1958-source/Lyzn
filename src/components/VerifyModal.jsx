@@ -63,11 +63,13 @@ export const VerifyModal = ({ open, onOpenChange, method }) => {
 
   const resetState = () => {
     setEmail("");
+    setRobloxUsername("");
     setScreenshot(null);
     setScreenshotName("");
     setSubmission(null);
     setCopied(false);
     setLoading(false);
+    setCooldownEnd(null);
   };
 
   const handleClose = (val) => {
