@@ -4,7 +4,7 @@ import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
 import { toast } from "sonner";
 import { Constellation } from "../components/Constellation";
-import { Check, X, Loader2, Lock, RefreshCw, Save } from "lucide-react";
+import { Check, X, Loader2, Lock, RefreshCw, Save, ShieldAlert } from "lucide-react";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
@@ -39,6 +39,19 @@ export default function Admin() {
       setSubmissions(data);
     } catch {
       toast.error("Failed to fetch submissions");
+    }
+  };
+
+  const clearFlags = async () => {
+    try {
+      const { data } = await axios.post(
+        `${API}/admin/clear-flags`,
+        {},
+        { headers: { "X-Admin-Password": password } }
+      );
+      toast.success(`Cleared ${data.cleared_flags} flags + ${data.cleared_attempts} rate-limit entries`);
+    } catch {
+      toast.error("Failed to clear flags");
     }
   };
 
@@ -141,6 +154,15 @@ export default function Admin() {
               data-testid="admin-refresh-btn"
             >
               <RefreshCw className="w-4 h-4 mr-2" /> Refresh
+            </Button>
+            <Button
+              variant="outline"
+              onClick={clearFlags}
+              className="border-orange-400/40 hover:border-orange-400 hover:bg-orange-400/10 rounded-md bg-transparent text-orange-300"
+              data-testid="admin-clear-flags-btn"
+              title="Clear all rate-limit flags (use if a real buyer got blocked)"
+            >
+              <ShieldAlert className="w-4 h-4 mr-2" /> Clear Flags
             </Button>
             <Button
               variant="outline"
