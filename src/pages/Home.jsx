@@ -65,6 +65,20 @@ const REVIEWS = [
   { name: "@2x_smoke", text: "Lyzn admin replied in discord faster than my mom does to my texts.", rating: 5 },
   { name: "@boltz", text: "Already made my $5 back in one Hoopz session. Free money.", rating: 5 },
   { name: "@kj_thareal", text: "All 32 games unlocked. Bro you're not finding this deal anywhere else.", rating: 5 },
+  { name: "@swisha", text: "Tried 3 other script sites before this. Lyzn the only one that actually works.", rating: 5 },
+  { name: "@tre_4l", text: "Volleyball Legends auto-spike is INSANE. teammates are mad lol.", rating: 5 },
+  { name: "@iceyy", text: "no lie, paid through cashapp and got my key in 4 min. legit ahh.", rating: 5 },
+  { name: "@bagchaser", text: "Drill City + NBA Champs both hitting. Bricked once on Phenom but devs fixed it next day.", rating: 5 },
+  { name: "@yng_kobe", text: "Best $5 a basketball player can spend. Period.", rating: 5 },
+  { name: "@mvp_quan", text: "Used the robux option, sent username, got verified in like 6 mins. real ones.", rating: 5 },
+  { name: "@spicy_mayo", text: "Arsenal aimbot got me 30 kills first match w lyzn. flawless.", rating: 5 },
+  { name: "@dribbledrip", text: "Hoops Life is unrecognizable with this. 99 ovr stats lookin like 110.", rating: 5 },
+  { name: "@finessekiid", text: "frfr the discord support is goated. answered me in 2 min.", rating: 5 },
+  { name: "@yotrey", text: "literally the GOAT script. been using it for weeks, still undetected.", rating: 5 },
+  { name: "@bbk_jon", text: "lifetime for $5 is actually crazy. my buddy paid $20 a month for less.", rating: 5 },
+  { name: "@xanaxxx", text: "Universe Football auto-pass is dirty. defenders cant do nothing.", rating: 5 },
+  { name: "@rico1k", text: "Fisch script makes the fishing so smooth. caught 3 mythics in an hour.", rating: 5 },
+  { name: "@wavy_b", text: "got the email + key like 30 sec after they approved. real time legit.", rating: 5 },
 ];
 
 export default function Home() {
