@@ -87,17 +87,27 @@ export default function Home() {
   const [method, setMethod] = useState("cashapp");
   const [currency, setCurrency] = useState("USD");
   const [stock, setStock] = useState(null);
+  const [stockError, setStockError] = useState(false);
 
   useEffect(() => {
     const fetchStock = async () => {
       try {
-        const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/stock`);
+        const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/stock`, { timeout: 8000 });
         setStock(data.stock);
-      } catch { /* ignore */ }
+        setStockError(false);
+        // Cache so brief outages don't blank the badge
+        try { localStorage.setItem("lyzn-stock-cache", String(data.stock)); } catch { /* ignore */ }
+      } catch {
+        setStockError(true);
+        // Fall back to cached stock if available
+        const cached = localStorage.getItem("lyzn-stock-cache");
+        if (cached !== null && stock === null) setStock(parseInt(cached, 10));
+      }
     };
     fetchStock();
     const t = setInterval(fetchStock, 15000);
     return () => clearInterval(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const filteredGames = useMemo(

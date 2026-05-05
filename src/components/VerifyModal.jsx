@@ -108,16 +108,22 @@ export const VerifyModal = ({ open, onOpenChange, method }) => {
         screenshot,
         method,
         roblox_username: isRobux ? robloxUsername.trim() : null,
-      });
+      }, { timeout: 15000 });
       setSubmission(data);
       toast("Submission received — awaiting admin review", {
         style: { background: "#0a0020", border: "1px solid #00F0FF", color: "#fff" },
       });
     } catch (err) {
-      const detail = err?.response?.data?.detail || "Submission failed.";
+      const detail = err?.response?.data?.detail || err?.message || "Submission failed.";
       const status = err?.response?.status;
-      // 429 = rate-limit/flagged, 409 = already-approved or out-of-stock
-      if (status === 429 && /seconds/i.test(detail)) {
+      const isNetwork = !err?.response; // no response = network/timeout error (server restarting?)
+
+      if (isNetwork) {
+        toast.error("Server is briefly unavailable — please try again in 30 seconds.", {
+          duration: 6000,
+          style: { background: "#0a0020", border: "1px solid #FFA500", color: "#fff" },
+        });
+      } else if (status === 429 && /seconds/i.test(detail)) {
         const match = detail.match(/(\d+)\s*seconds?/i);
         const secs = match ? parseInt(match[1], 10) : 300;
         setCooldownEnd(Date.now() + secs * 1000);
@@ -126,7 +132,6 @@ export const VerifyModal = ({ open, onOpenChange, method }) => {
           style: { background: "#0a0020", border: "1px solid #FF003C", color: "#fff" },
         });
       } else {
-        // generic error – surface the backend's reason directly so the user knows what to fix
         toast.error(detail, {
           duration: 6000,
           style: { background: "#0a0020", border: "1px solid #FF003C", color: "#fff" },
