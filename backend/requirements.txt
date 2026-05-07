@@ -1,0 +1,7 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+pydantic[email]==2.9.2
+python-dotenv==1.0.1
+pymongo==4.8.0
+resend==2.4.0
+requests==2.32.3
