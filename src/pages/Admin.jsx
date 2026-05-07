@@ -99,12 +99,12 @@ export default function Admin() {
     return (
       <div className="min-h-screen text-white relative font-sora flex items-center justify-center px-6 bg-black">
         <Constellation />
-        <div className="relative z-10 w-full max-w-md bg-white/[0.03] border border-white/15 p-8 backdrop-blur-xl rounded-xl">
+        <div className="relative z-10 w-full max-w-md bg-white/[0.03] border border-purple-500/30 p-8 backdrop-blur-xl rounded-xl">
           <Lock className="w-8 h-8 text-white/70 mb-4" />
           <h1 className="text-3xl font-bold tracking-tight mb-2">
             Admin Access
           </h1>
-          <p className="text-sm text-white/50 mb-6">
+          <p className="text-sm text-purple-200/60 mb-6">
             Enter the admin password to review payment submissions.
           </p>
           <Input
@@ -114,7 +114,7 @@ export default function Admin() {
             onChange={(e) => setPassword(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && login()}
             placeholder="password"
-            className="bg-white/[0.04] border border-white/15 text-white placeholder:text-white/30 focus:border-white/40 focus:ring-0 rounded-md h-11 mb-4"
+            className="bg-white/[0.04] border border-purple-500/30 text-white placeholder:text-white/30 focus:border-white/40 focus:ring-0 rounded-md h-11 mb-4"
           />
           <Button
             data-testid="admin-login-btn"
@@ -124,7 +124,7 @@ export default function Admin() {
           >
             {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : "Enter"}
           </Button>
-          <a href="/" className="block text-center text-xs text-white/40 mt-6 hover:text-white">
+          <a href="/" className="block text-center text-xs text-cyan-400/70 mt-6 hover:text-white">
             ← back to Lyzn.gg
           </a>
         </div>
@@ -141,7 +141,7 @@ export default function Admin() {
       <div className="relative z-10 px-6 md:px-12 py-10 max-w-7xl mx-auto">
         <div className="flex items-center justify-between flex-wrap gap-4 mb-10">
           <div>
-            <p className="text-[10px] uppercase tracking-[0.3em] text-white/40">/ lyzn admin</p>
+            <p className="text-[10px] uppercase tracking-[0.3em] text-cyan-400/70">/ lyzn admin</p>
             <h1 className="text-4xl font-bold tracking-tight mt-1">
               Payment Review
             </h1>
@@ -150,7 +150,7 @@ export default function Admin() {
             <Button
               variant="outline"
               onClick={() => fetchList()}
-              className="border-white/15 hover:border-white/40 rounded-md bg-transparent text-white"
+              className="border-purple-500/30 hover:border-white/40 rounded-md bg-transparent text-white"
               data-testid="admin-refresh-btn"
             >
               <RefreshCw className="w-4 h-4 mr-2" /> Refresh
@@ -184,7 +184,7 @@ export default function Admin() {
                 setAuthed(false);
                 setPassword("");
               }}
-              className="border-white/15 hover:border-red-400 rounded-md bg-transparent text-white"
+              className="border-purple-500/30 hover:border-red-400 rounded-md bg-transparent text-white"
               data-testid="admin-logout-btn"
             >
               Logout
@@ -224,14 +224,14 @@ const Section = ({ title, count, children }) => (
   <section className="mb-14">
     <div className="flex items-center gap-4 mb-5">
       <h2 className="text-xl font-bold tracking-tight">{title}</h2>
-      <span className="text-xs font-mono text-white/40">[{count}]</span>
+      <span className="text-xs font-mono text-cyan-400/70">[{count}]</span>
     </div>
     {children}
   </section>
 );
 
 const Empty = ({ label }) => (
-  <div className="border border-dashed border-white/10 p-10 text-center text-sm text-white/40 rounded-lg">
+  <div className="border border-dashed border-white/10 p-10 text-center text-sm text-cyan-400/70 rounded-lg">
     {label}
   </div>
 );
@@ -240,7 +240,7 @@ const Card = ({ sub, onApprove, onReject }) => (
   <div className="bg-white/[0.03] border border-white/10 p-5 rounded-xl backdrop-blur-md" data-testid={`admin-sub-${sub.id}`}>
     <div className="flex items-center justify-between mb-3">
       <div>
-        <p className="text-[10px] uppercase tracking-[0.3em] text-white/40">{sub.method}</p>
+        <p className="text-[10px] uppercase tracking-[0.3em] text-cyan-400/70">{sub.method}</p>
         <p className="font-mono text-sm text-white mt-1">{sub.email}</p>
         {sub.roblox_username && (
           <p className="font-mono text-xs text-cyan-400 mt-0.5">roblox: {sub.roblox_username}</p>
@@ -257,7 +257,7 @@ const Card = ({ sub, onApprove, onReject }) => (
         />
       </a>
     )}
-    <p className="text-[11px] font-mono text-white/40 mt-3">
+    <p className="text-[11px] font-mono text-cyan-400/70 mt-3">
       {new Date(sub.created_at).toLocaleString()}
     </p>
     {sub.key && (

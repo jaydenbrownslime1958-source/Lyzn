@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
  * Canvas constellation network — animated dots with connecting lines.
  * Mimics the Avec.cc / "particles.js" classic aesthetic.
  */
-export const Constellation = ({ density = 90, linkDistance = 140, color = "rgba(255,255,255,0.55)" }) => {
+export const Constellation = ({ density = 90, linkDistance = 140, color = "rgba(190,140,255,0.55)" }) => {
   const canvasRef = useRef(null);
   const rafRef = useRef(null);
 
@@ -83,7 +83,11 @@ export const Constellation = ({ density = 90, linkDistance = 140, color = "rgba(
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none"
-      style={{ zIndex: 0, background: "#000" }}
+      style={{
+        zIndex: 0,
+        background:
+          "radial-gradient(ellipse at 50% 0%, #2a0a5e 0%, #1a0440 35%, #09001A 70%, #05000A 100%)",
+      }}
     />
   );
 };

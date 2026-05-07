@@ -5,7 +5,7 @@
 body {
   margin: 0;
   font-family: 'Sora', system-ui, sans-serif;
-  background-color: #000;
+  background-color: #05000A;
   color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -15,25 +15,25 @@ code { font-family: 'JetBrains Mono', monospace; }
 
 @layer base {
   :root {
-    --background: 0 0% 0%;
+    --background: 270 100% 4%;
     --foreground: 0 0% 100%;
-    --card: 0 0% 4%;
+    --card: 268 80% 8%;
     --card-foreground: 0 0% 100%;
-    --popover: 0 0% 4%;
+    --popover: 268 80% 8%;
     --popover-foreground: 0 0% 100%;
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 0%;
-    --secondary: 0 0% 10%;
+    --primary: 276 100% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 268 50% 15%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 8%;
-    --muted-foreground: 0 0% 60%;
-    --accent: 0 0% 12%;
-    --accent-foreground: 0 0% 100%;
+    --muted: 268 30% 12%;
+    --muted-foreground: 270 30% 80%;
+    --accent: 186 100% 50%;
+    --accent-foreground: 0 0% 0%;
     --destructive: 349 100% 50%;
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 0 0% 30%;
+    --border: 270 50% 25%;
+    --input: 270 50% 25%;
+    --ring: 276 100% 58%;
     --radius: 0.5rem;
   }
 }

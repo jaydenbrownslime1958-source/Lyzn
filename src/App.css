@@ -4,17 +4,17 @@
 .App {
   font-family: 'Sora', sans-serif;
   color: #fff;
-  background-color: #000;
+  background-color: #05000A;
 }
 
 .font-sora { font-family: 'Sora', sans-serif; }
 .font-jetbrains { font-family: 'JetBrains Mono', monospace; }
 
 /* selection */
-::selection { background: #fff; color: #000; }
+::selection { background: #B026FF; color: #fff; }
 
 /* scrollbar */
 ::-webkit-scrollbar { width: 8px; height: 8px; }
-::-webkit-scrollbar-track { background: #000; }
-::-webkit-scrollbar-thumb { background: #1a1a1a; }
-::-webkit-scrollbar-thumb:hover { background: #2a2a2a; }
+::-webkit-scrollbar-track { background: #05000A; }
+::-webkit-scrollbar-thumb { background: #2a0a5e; }
+::-webkit-scrollbar-thumb:hover { background: #B026FF; }

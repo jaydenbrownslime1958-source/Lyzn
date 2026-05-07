@@ -146,38 +146,38 @@ export default function Home() {
   };
 
   return (
-    <div className="relative min-h-screen text-white font-sora bg-black">
+    <div className="relative min-h-screen text-white font-sora bg-[#05000A]">
       <Constellation />
 
       {/* NAV */}
-      <header className="relative z-10 border-b border-white/10 bg-black/60 backdrop-blur-md">
+      <header className="relative z-10 border-b border-purple-500/20 bg-black/50 backdrop-blur-md">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-10 py-4">
           <a href="/" className="flex items-center gap-2 group" data-testid="brand-logo">
-            <div className="w-8 h-8 rounded-md bg-white/10 border border-white/20 flex items-center justify-center group-hover:bg-white/20 transition">
-              <Zap className="w-4 h-4 text-white" />
+            <div className="w-8 h-8 rounded-md bg-purple-500/20 border border-purple-400/40 flex items-center justify-center group-hover:bg-purple-500/30 transition">
+              <Zap className="w-4 h-4 text-purple-300" />
             </div>
-            <span className="text-2xl font-bold tracking-tight">Lyzn<span className="text-white/40">.gg</span></span>
+            <span className="text-2xl font-bold tracking-tight">Lyzn<span className="text-purple-300/50">.gg</span></span>
           </a>
 
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-white/80">
-            <a href="#home" className="hover:text-white transition" data-testid="nav-home">Home</a>
-            <a href="#games" className="hover:text-white transition" data-testid="nav-games">Games</a>
-            <a href="#reviews" className="hover:text-white transition" data-testid="nav-reviews">Reviews</a>
-            <a href="#status" className="hover:text-white transition" data-testid="nav-status">Status</a>
-            <a href="https://discord.gg/m7Cju8zr3Z" target="_blank" rel="noopener noreferrer" onClick={openExternal("https://discord.gg/m7Cju8zr3Z")} className="hover:text-white transition" data-testid="nav-discord">Discord</a>
-            <a href="/admin" className="hover:text-white transition" data-testid="nav-admin">Admin</a>
+          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-purple-100/80">
+            <a href="#home" className="hover:text-cyan-400 transition" data-testid="nav-home">Home</a>
+            <a href="#games" className="hover:text-cyan-400 transition" data-testid="nav-games">Games</a>
+            <a href="#reviews" className="hover:text-cyan-400 transition" data-testid="nav-reviews">Reviews</a>
+            <a href="#status" className="hover:text-cyan-400 transition" data-testid="nav-status">Status</a>
+            <a href="https://discord.gg/m7Cju8zr3Z" target="_blank" rel="noopener noreferrer" onClick={openExternal("https://discord.gg/m7Cju8zr3Z")} className="hover:text-cyan-400 transition" data-testid="nav-discord">Discord</a>
+            <a href="/admin" className="hover:text-cyan-400 transition" data-testid="nav-admin">Admin</a>
           </nav>
 
           <div className="flex items-center gap-3">
             <DropdownMenu>
               <DropdownMenuTrigger
                 data-testid="currency-trigger"
-                className="flex items-center gap-1 text-sm bg-white/5 border border-white/15 px-3 py-1.5 rounded-md hover:bg-white/10 transition"
+                className="flex items-center gap-1 text-sm bg-purple-500/10 border border-purple-500/30 px-3 py-1.5 rounded-md hover:bg-white/10 transition"
               >
                 {currency === "USD" ? "$" : currency === "EUR" ? "€" : "£"}
                 <ChevronDown className="w-3.5 h-3.5" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-black border border-white/15 text-white">
+              <DropdownMenuContent className="bg-black border border-purple-500/30 text-white">
                 <DropdownMenuItem onClick={() => setCurrency("USD")}>USD ($)</DropdownMenuItem>
                 <DropdownMenuItem onClick={() => setCurrency("EUR")}>EUR (€)</DropdownMenuItem>
                 <DropdownMenuItem onClick={() => setCurrency("GBP")}>GBP (£)</DropdownMenuItem>
@@ -186,7 +186,7 @@ export default function Home() {
             <button
               onClick={() => scrollTo("payments")}
               data-testid="nav-cart-btn"
-              className="w-10 h-10 flex items-center justify-center bg-white/5 border border-white/15 hover:bg-white/10 hover:border-white/30 transition rounded-md"
+              className="w-10 h-10 flex items-center justify-center bg-purple-500/10 border border-purple-500/30 hover:bg-white/10 hover:border-purple-500/50 transition rounded-md"
               aria-label="cart"
             >
               <ShoppingCart className="w-4 h-4" />
@@ -203,7 +203,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center gap-2 border border-white/15 bg-white/5 backdrop-blur px-3 py-1 rounded-full text-xs text-white/70" data-testid="stock-badge">
+            <div className="inline-flex items-center gap-2 border border-purple-500/30 bg-purple-500/10 backdrop-blur px-3 py-1 rounded-full text-xs text-purple-100/80" data-testid="stock-badge">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               {stock === null ? "..." : stock} Keys In Stock · $5 Lifetime
             </div>
@@ -215,13 +215,13 @@ export default function Home() {
               </span>
             </h1>
 
-            <p className="mt-5 text-base md:text-lg text-white/60 max-w-xl mx-auto">
+            <p className="mt-5 text-base md:text-lg text-purple-100/70 max-w-xl mx-auto">
               The lifetime pass to Lyzn — 32 supported Roblox games, one key, forever.
             </p>
 
             {/* SEARCH */}
             <div className="mt-12 relative max-w-2xl mx-auto">
-              <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-white/40" />
+              <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-cyan-400/70" />
               <Input
                 data-testid="hero-search-input"
                 value={query}
@@ -230,7 +230,7 @@ export default function Home() {
                   if (e.target.value) scrollTo("games");
                 }}
                 placeholder="Search for games..."
-                className="pl-14 pr-5 py-7 text-base bg-white/[0.04] border border-white/10 hover:border-white/20 focus:border-white/40 focus:ring-0 placeholder:text-white/30 rounded-xl backdrop-blur-md text-white"
+                className="pl-14 pr-5 py-7 text-base bg-purple-500/[0.07] border border-purple-500/20 hover:border-purple-500/40 focus:border-cyan-400/60 focus:ring-0 placeholder:text-white/30 rounded-xl backdrop-blur-md text-white"
               />
             </div>
 
@@ -238,7 +238,7 @@ export default function Home() {
               <Button
                 onClick={() => scrollTo("games")}
                 data-testid="view-games-btn"
-                className="bg-white text-black hover:bg-white/90 font-bold px-6 py-6 rounded-md transition-all"
+                className="bg-purple-600 hover:bg-purple-500 text-white font-bold px-6 py-6 rounded-md transition-all border border-purple-400/60 shadow-[0_0_25px_rgba(176,38,255,0.45)] hover:shadow-[0_0_40px_rgba(176,38,255,0.8)]"
               >
                 <ShoppingCart className="w-4 h-4 mr-2" />
                 View Games
@@ -249,7 +249,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 onClick={openExternal("https://discord.gg/m7Cju8zr3Z")}
                 data-testid="hero-discord-btn"
-                className="inline-flex items-center gap-2 border border-white/15 hover:border-white/40 text-white px-6 py-3.5 rounded-md transition-all"
+                className="inline-flex items-center gap-2 border border-purple-500/30 hover:border-cyan-400/60 text-white px-6 py-3.5 rounded-md transition-all"
               >
                 <FaDiscord className="w-4 h-4" />
                 Join Discord
@@ -268,15 +268,15 @@ export default function Home() {
       </section>
 
       {/* GAMES */}
-      <section id="games" className="relative z-10 px-6 py-24 border-t border-white/5">
+      <section id="games" className="relative z-10 px-6 py-24 border-t border-purple-500/10">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-end justify-between flex-wrap gap-6 mb-10">
             <div>
-              <p className="text-[11px] uppercase tracking-[0.3em] text-white/40 mb-2">/ products</p>
+              <p className="text-[11px] uppercase tracking-[0.3em] text-cyan-400 mb-2">/ products</p>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Supported Games</h2>
-              <p className="text-white/50 mt-2">One key. Every title in our library.</p>
+              <p className="text-purple-200/60 mt-2">One key. Every title in our library.</p>
             </div>
-            <div className="text-sm text-white/50 font-mono">
+            <div className="text-sm text-purple-200/60 font-mono">
               {filteredGames.length} / {SUPPORTED_GAMES.length}
             </div>
           </div>
@@ -289,19 +289,19 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.012, duration: 0.35 }}
-                className="group bg-white/[0.03] hover:bg-white/[0.07] border border-white/10 hover:border-white/30 p-4 rounded-lg cursor-default transition-all relative overflow-hidden backdrop-blur-sm"
+                className="group bg-purple-500/[0.06] hover:bg-purple-500/[0.12] border border-purple-500/20 hover:border-purple-500/50 p-4 rounded-lg cursor-default transition-all relative overflow-hidden backdrop-blur-sm"
                 data-testid={`game-card-${g.id}`}
               >
                 <div className="absolute top-2 right-2 text-[9px] text-white/30 font-mono">
                   #{String(g.id).padStart(2, "0")}
                 </div>
-                <Gamepad2 className="w-5 h-5 text-white/50 group-hover:text-white transition" />
+                <Gamepad2 className="w-5 h-5 text-purple-200/60 group-hover:text-white transition" />
                 <p className="mt-3 font-semibold text-sm leading-tight text-white">{g.name}</p>
-                <p className="text-[10px] uppercase tracking-[0.18em] text-white/40 mt-1">{g.category}</p>
+                <p className="text-[10px] uppercase tracking-[0.18em] text-cyan-400/70 mt-1">{g.category}</p>
               </motion.div>
             ))}
             {filteredGames.length === 0 && (
-              <div className="col-span-full text-center py-16 text-white/40">
+              <div className="col-span-full text-center py-16 text-cyan-400/70">
                 No games match "{query}"
               </div>
             )}
@@ -310,12 +310,12 @@ export default function Home() {
       </section>
 
       {/* PAYMENTS */}
-      <section id="payments" className="relative z-10 px-6 py-24 border-t border-white/5">
+      <section id="payments" className="relative z-10 px-6 py-24 border-t border-purple-500/10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <p className="text-[11px] uppercase tracking-[0.3em] text-white/40 mb-2">/ checkout</p>
+            <p className="text-[11px] uppercase tracking-[0.3em] text-cyan-400 mb-2">/ checkout</p>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Send $5. Get Your Key.</h2>
-            <p className="text-white/50 mt-3">
+            <p className="text-purple-200/60 mt-3">
               Pick a payment method, send <span className="text-white font-semibold">$5</span>, then
               come back and verify with a screenshot.
             </p>
@@ -327,7 +327,7 @@ export default function Home() {
               return (
                 <div
                   key={p.id}
-                  className="group relative bg-white/[0.03] border border-white/10 hover:border-white/30 backdrop-blur-md p-7 rounded-xl transition-all overflow-hidden"
+                  className="group relative bg-purple-500/[0.06] border border-purple-500/20 hover:border-purple-500/50 backdrop-blur-md p-7 rounded-xl transition-all overflow-hidden"
                   data-testid={`payment-card-${p.id}`}
                 >
                   <div
@@ -335,7 +335,7 @@ export default function Home() {
                     style={{ background: p.accent }}
                   />
                   <Icon className="w-10 h-10" style={{ color: p.accent }} />
-                  <p className="text-[10px] uppercase tracking-[0.3em] text-white/40 mt-6">Method</p>
+                  <p className="text-[10px] uppercase tracking-[0.3em] text-cyan-400/70 mt-6">Method</p>
                   <h3 className="text-2xl font-bold mt-1">{p.label}</h3>
 
                   <div className="flex gap-2 mt-7">
@@ -344,7 +344,7 @@ export default function Home() {
                       target="_blank"
                       rel="noreferrer"
                       data-testid={`pay-open-${p.id}`}
-                      className="flex-1 text-center border border-white/15 hover:border-white/40 text-white font-semibold py-2.5 text-xs uppercase tracking-widest rounded-md transition-all"
+                      className="flex-1 text-center border border-purple-500/30 hover:border-cyan-400/60 text-white font-semibold py-2.5 text-xs uppercase tracking-widest rounded-md transition-all"
                     >
                       Open
                     </a>
@@ -361,9 +361,9 @@ export default function Home() {
             })}
           </div>
 
-          <div className="mt-10 flex items-start gap-3 max-w-2xl mx-auto bg-white/[0.03] border border-white/10 p-5 rounded-lg">
-            <Shield className="w-5 h-5 text-white/60 shrink-0 mt-0.5" />
-            <p className="text-sm text-white/60">
+          <div className="mt-10 flex items-start gap-3 max-w-2xl mx-auto bg-purple-500/[0.06] border border-purple-500/20 p-5 rounded-lg">
+            <Shield className="w-5 h-5 text-purple-100/70 shrink-0 mt-0.5" />
+            <p className="text-sm text-purple-100/70">
               Fake submissions are flagged automatically. If you submit too fast or get rejected,
               you'll be locked out for <span className="text-white font-semibold">5 minutes</span>.
             </p>
@@ -372,17 +372,17 @@ export default function Home() {
       </section>
 
       {/* REVIEWS */}
-      <section id="reviews" className="relative z-10 px-6 py-24 border-t border-white/5">
+      <section id="reviews" className="relative z-10 px-6 py-24 border-t border-purple-500/10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <p className="text-[11px] uppercase tracking-[0.3em] text-white/40 mb-2">/ reviews</p>
+            <p className="text-[11px] uppercase tracking-[0.3em] text-cyan-400 mb-2">/ reviews</p>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">What Lyzn users say</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {REVIEWS.map((r, i) => (
               <div
                 key={i}
-                className="bg-white/[0.03] border border-white/10 hover:border-white/25 backdrop-blur-md p-5 rounded-xl transition-all"
+                className="bg-purple-500/[0.06] border border-purple-500/20 hover:border-white/25 backdrop-blur-md p-5 rounded-xl transition-all"
                 data-testid={`review-${i}`}
               >
                 <div className="flex gap-0.5 mb-3">
@@ -390,8 +390,8 @@ export default function Home() {
                     <Star key={k} className="w-3.5 h-3.5 fill-white text-white" />
                   ))}
                 </div>
-                <p className="text-sm text-white/80 leading-relaxed">"{r.text}"</p>
-                <p className="text-xs text-white/40 mt-4 font-mono">{r.name}</p>
+                <p className="text-sm text-purple-50/90 leading-relaxed">"{r.text}"</p>
+                <p className="text-xs text-cyan-400/70 mt-4 font-mono">{r.name}</p>
               </div>
             ))}
           </div>
@@ -399,10 +399,10 @@ export default function Home() {
       </section>
 
       {/* STATUS */}
-      <section id="status" className="relative z-10 px-6 py-24 border-t border-white/5">
+      <section id="status" className="relative z-10 px-6 py-24 border-t border-purple-500/10">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
-            <p className="text-[11px] uppercase tracking-[0.3em] text-white/40 mb-2">/ status</p>
+            <p className="text-[11px] uppercase tracking-[0.3em] text-cyan-400 mb-2">/ status</p>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">All systems operational</h2>
 
             {/* Glowing UNDETECTED & WORKING badge */}
@@ -420,7 +420,7 @@ export default function Home() {
               </button>
             </div>
           </div>
-          <div className="bg-white/[0.03] border border-white/10 rounded-xl divide-y divide-white/10 backdrop-blur-md">
+          <div className="bg-purple-500/[0.06] border border-purple-500/20 rounded-xl divide-y divide-purple-500/20 backdrop-blur-md">
             {[
               { name: "Key delivery API", status: "Operational" },
               { name: "Payment verification", status: "Operational" },
@@ -428,7 +428,7 @@ export default function Home() {
               { name: "Email service", status: "Operational" },
             ].map((s, i) => (
               <div key={i} className="flex items-center justify-between px-6 py-4">
-                <p className="text-sm text-white/80">{s.name}</p>
+                <p className="text-sm text-purple-50/90">{s.name}</p>
                 <div className="flex items-center gap-2 text-xs text-emerald-400 font-semibold">
                   <CircleCheck className="w-4 h-4" />
                   {s.status}
@@ -440,7 +440,7 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="relative z-10 border-t border-white/5 px-6 py-10 text-xs text-white/40">
+      <footer className="relative z-10 border-t border-purple-500/10 px-6 py-10 text-xs text-cyan-400/70">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <span className="font-bold text-white">Lyzn.gg</span>
@@ -457,3 +457,4 @@ export default function Home() {
     </div>
   );
 }
+
